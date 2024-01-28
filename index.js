@@ -1,38 +1,53 @@
 getPlayerChoice();
 getComputerChoice();
 startRound();
+
  function startRound(playerChoice,computerChoice){
-    if (playerChoice = "rock" && computerChoice <= 33); {
-         alert("there was a draw");
+     let roundWinner;
+     const roundDraw = new Boolean(false);
+     if (playerChoice > computerChoice) {
+         roundWinner = playerChoice;
      }
+     if (playerChoice = computerChoice) {
+         roundDraw = true;
+     }
+     if (playerChoice < computerChoice) {
+         roundWinner = computerChoice;
+     }
+     if (roundDraw); {
+         alert("Draw!");
+     }
+     if (playerChoice=!computerChoice){
+         alert("The winner is " + roundWinner + " .");
+     }
+     return;
  }
 
 
 function getPlayerChoice() {
-    const playerChoice = prompt("pick rock, paper or scissor");
-    if (playerChoice == "rock") {
+    let playerChoice = prompt("pick rock, paper or scissor");
+    if (playerChoice == "rock") { playerChoice <=1
     }
-    if (playerChoice == "paper") {
+    if (playerChoice == "paper") { playerChoice > 1 && playerChoice <= 2
     }
-    if (playerChoice == "scissor") {
+    if (playerChoice == "scissor") {playerChoice = 3
     }
-    alert("you picked " + playerChoice);
+    alert("You picked " + playerChoice);
     return playerChoice;
 }
 
 function getComputerChoice() {
-    let computerChoice = Math.random() * 100;
+    let computerChoice = Math.random() * 3;
     computerChoice = Math.floor(computerChoice) + 1;
-    if (computerChoice <= 33) {
-        computerChoice = "rock"
+    if (computerChoice <= 1) {
+        alert("Computer picked rock")
     }
-    if (computerChoice > 34 && computerChoice <= 67) {
-        computerChoice = "paper"
+    else if (computerChoice > 1 && computerChoice <= 2) {
+        alert("Computer picked paper")
     }
-    if (computerChoice > 68) { 
-        computerChoice = "scissor"
+    else if (computerChoice = 3) { 
+        alert("Computer picked scissor")
     }
-    alert("Computer picked " + computerChoice);
     return computerChoice;
 }
 
