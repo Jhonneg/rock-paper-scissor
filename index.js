@@ -1,17 +1,22 @@
 getPlayerChoice();
 getComputerChoice();
+startRound();
+ function startRound(playerChoice,computerChoice){
+    if (playerChoice = "rock" && computerChoice <= 33); {
+         alert("there was a draw");
+     }
+ }
+
 
 function getPlayerChoice() {
-    playerChoice = prompt("pick rock, paper or scissor");
+    const playerChoice = prompt("pick rock, paper or scissor");
     if (playerChoice == "rock") {
-        alert("you picked rock");
     }
     if (playerChoice == "paper") {
-        alert("you picked paper");
     }
     if (playerChoice == "scissor") {
-        alert("you picked scissor");
     }
+    alert("you picked " + playerChoice);
     return playerChoice;
 }
 
@@ -19,14 +24,15 @@ function getComputerChoice() {
     let computerChoice = Math.random() * 100;
     computerChoice = Math.floor(computerChoice) + 1;
     if (computerChoice <= 33) {
-        alert("computer picked rock");
+        computerChoice = "rock"
     }
     if (computerChoice > 34 && computerChoice <= 67) {
-        alert("computer picked paper");
+        computerChoice = "paper"
     }
-    if (computerChoice > 68) {
-        alert("computer picked scissor");
+    if (computerChoice > 68) { 
+        computerChoice = "scissor"
     }
+    alert("Computer picked " + computerChoice);
     return computerChoice;
 }
 
