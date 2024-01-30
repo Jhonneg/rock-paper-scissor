@@ -13,9 +13,9 @@ function getPlayerChoice() {
 function playGame(){
     let playerScore = 0
     let computerScore = 0
+    for (let i = 0; i < 6; i++) {
     const playerChoice = getPlayerChoice();
-     const computerPicked = getComputerChoice();
-    for (let i = 0; i < 5; i++)
+    const computerPicked = getComputerChoice();
      if (computerPicked === playerChoice) {
         alert("Draw")
     } else if  (computerPicked === "paper" && playerChoice === "rock") {
@@ -25,12 +25,15 @@ function playGame(){
         alert("Player won")
          playerScore++
     }
-    if (playerScore =5 && computerScore<5) {
-        alert("Player won the game")
     }
-    else if (computerScore = 5 && playerScore<5) {
+    if (playerScore == 3 || computerScore == 3) {
+        i = 6
+    } 
+    if (playerScore > computerScore) {
+        alert("Player won the game")
+    } else if (computerScore > playerScore) {
         alert("Computer won the game")
     }
-}
 
+}
 playGame();
