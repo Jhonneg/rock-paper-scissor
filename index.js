@@ -3,35 +3,30 @@ getPlayerChoice();
 getComputerChoice();
 startRound();
 
- function startRound(playerChoice,computerChoice){
-     let roundWinner;
-
-     if (playerChoice > computerChoice) {
-         roundWinner = playerChoice;
-     }
-     if (playerChoice < computerChoice) {
-         roundWinner = computerChoice;
-     }
-     return alert("The winner is " + roundWinner + " .");
- }
+function startRound(playerChoice, computerPicked) {
+    
+}
 
 
 function getPlayerChoice() {
     let playerChoice = prompt("pick rock, paper or scissor");
-    if (playerChoice == "rock") {playerChoice == 1
+    if (playerChoice == "rock") {
+        return alert("You picked rock")
     }
-    if (playerChoice == "paper") {playerChoice == 2
+    else if (playerChoice == "paper") {
+        return alert("You picked paper")
     }
-    if (playerChoice == "scissor") {playerChoice == 3
+    if (playerChoice == "scissor") {
+        return alert("You picked scissor")
     }
-    return alert("You picked " + playerChoice);
 }
 
 function getComputerChoice() {
-    let computerChoice = Math.floor(Math.random()*3);
-    if (computerChoice == 1) {return "rock"}
-    else if (computerChoice == 2) {return "paper"}
-    else if (computerChoice == 3) {return "scissor" }
+    let computerPicks = ["Rock","Paper","Scissor"];
+    let computerCalc = Math.floor(Math.random()*computerPicks.length);
+    let computerPicked = computerPicks[computerCalc];
+    return alert("Computer picked "+computerPicked);
+
 }
 
 
