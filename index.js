@@ -1,32 +1,36 @@
-
-getPlayerChoice();
-getComputerChoice();
-startRound();
-
-function startRound(playerChoice, computerPicked) {
-    
-}
-
-
-function getPlayerChoice() {
-    let playerChoice = prompt("pick rock, paper or scissor");
-    if (playerChoice == "rock") {
-        return alert("You picked rock")
-    }
-    else if (playerChoice == "paper") {
-        return alert("You picked paper")
-    }
-    if (playerChoice == "scissor") {
-        return alert("You picked scissor")
-    }
-}
-
 function getComputerChoice() {
-    let computerPicks = ["Rock","Paper","Scissor"];
-    let computerCalc = Math.floor(Math.random()*computerPicks.length);
+    const computerPicks = ["rock", "paper", "scissor"];
+    let computerCalc = Math.floor(Math.random() * computerPicks.length);
     let computerPicked = computerPicks[computerCalc];
-    return alert("Computer picked "+computerPicked);
-
+    alert("Computer picked " + computerPicked);
+    return computerPicked
+}
+function getPlayerChoice() {
+    const playerChoice = prompt("pick rock, paper or scissor");
+    alert("You picked " + playerChoice)
+    return playerChoice
+}
+function playGame(){
+    let playerScore = 0
+    let computerScore = 0
+    const playerChoice = getPlayerChoice();
+     const computerPicked = getComputerChoice();
+    for (let i = 0; i < 5; i++)
+     if (computerPicked === playerChoice) {
+        alert("Draw")
+    } else if  (computerPicked === "paper" && playerChoice === "rock") {
+        alert("Player lost")
+         computerScore++
+    } else if (computerPicked === "scissor" && playerChoice === "rock") {
+        alert("Player won")
+         playerScore++
+    }
+    if (playerScore =5 && computerScore<5) {
+        alert("Player won the game")
+    }
+    else if (computerScore = 5 && playerScore<5) {
+        alert("Computer won the game")
+    }
 }
 
-
+playGame();
