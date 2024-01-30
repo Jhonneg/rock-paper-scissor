@@ -14,17 +14,29 @@ function playGame(){
     let playerScore = 0
     let computerScore = 0
     for (let i = 0; i < 6; i++) {
-    const playerChoice = getPlayerChoice();
-    const computerPicked = getComputerChoice();
-     if (computerPicked === playerChoice) {
-        alert("Draw")
-    } else if  (computerPicked === "paper" && playerChoice === "rock") {
-        alert("Player lost")
-         computerScore++
-    } else if (computerPicked === "scissor" && playerChoice === "rock") {
-        alert("Player won")
-         playerScore++
-    }
+        const playerChoice = getPlayerChoice();
+        const computerPicked = getComputerChoice();
+        if (computerPicked === playerChoice) {
+            alert("Draw")
+        } else if (computerPicked === "paper" && playerChoice === "rock") {
+            alert("Player lost")
+            computerScore++
+        } else if (computerPicked === "scissor" && playerChoice === "rock") {
+            alert("Player won")
+            playerScore++
+        } else if (computerPicked === "rock" && playerChoice === "paper") {
+            alert("Player won")
+            playerScore++
+        } else if (computerPicked === "paper" && playerChoice === "scissor") {
+            alert("Player won")
+            playerScore++
+        } else if (computerPicked === "scissor" && playerChoice === "paper") {
+            alert("Player lost")
+            computerScore++
+        } else if (computerPicked === "rock" && playerChoice === "scissor") {
+            alert("Player lost")
+            computerScore++
+        }
     }
     if (playerScore == 3 || computerScore == 3) {
         i = 6
