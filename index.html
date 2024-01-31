@@ -3,11 +3,29 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Jokenpoo game</title>
-    <script src="index.js"></script>
-    <link" rel="stylesheet" href="styles.css" />
+    <title>RPS Game</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <h1>Rock paper scissor game.</h1>
+    <div class="container">
+      <h1>Rock paper scissor game.</h1>
+      <p>Pick one</p>
+      <button value="Rock" onclick="getPlayerChoice()">Rock</button>
+      <button value="Paper" onclick="getPlayerChoice()">Paper</button>
+      <button value="Scissor" onclick="getPlayerChoice()">Scissor</button>
+      <p>Player pick:</p>
+      <p class="playerpick"></p>
+      <p>Computer picked:</p>
+      <p class="computerpick"></p>
+      <p>Winner is:</p>
+      <p class="winner"></p>
+    </div>
+    <script src="index.js"></script>
   </body>
 </html>

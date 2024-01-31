@@ -1,16 +1,18 @@
 function getComputerChoice() {
-    const computerPicks = ["rock", "paper", "scissor"];
+    const computerPicks = ["Rock", "Paper", "Scissor"];
     let computerCalc = Math.floor(Math.random() * computerPicks.length);
     let computerPicked = computerPicks[computerCalc];
-    alert("Computer picked " + computerPicked);
+    document.querySelector(".computerpick").textContent = computerPicked
     return computerPicked
 }
+
 function getPlayerChoice() {
-    const playerChoice = prompt("pick rock, paper or scissor");
-    alert("You picked " + playerChoice)
-    return playerChoice
+    let playerChoice = document.querySelector('button').getAttribute('value')
+    document.querySelector(".playerpick").textContent = playerChoice
+    return
 }
-function playGame(){
+function playGame() {
+    getPlayerChoice()
     let playerScore = 0
     let computerScore = 0
     for (let i = 0; i < 6; i++) {
@@ -46,6 +48,5 @@ function playGame(){
     } else if (computerScore > playerScore) {
         alert("Computer won the game")
     }
-
+    
 }
-playGame();

@@ -1,0 +1,36 @@
+:root{
+  --main-color: #F9F5EB;
+  --sub-color: #3C486B;
+}
+body {
+  font-family: "Roboto Mono", monospace;
+  background-color: #F9F5EB;
+  text-align: center;
+  text-decoration: none;
+}
+
+.container {
+  padding: 150px;
+}
+
+h1 {
+  text-transform: uppercase;
+  background-color: #3C486B;
+  display: inline-block;
+}
+button{
+  background-color: var(--sub-color);
+  padding: 15px 32px;
+  border-radius: 10%;
+  border: none;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+button:hover{
+background-color: var(--main-color);
+transition: 0.7s;
+}
+
+
