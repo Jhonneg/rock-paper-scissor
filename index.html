@@ -16,11 +16,25 @@
     <div class="container">
       <h1>Rock paper scissor game</h1>
       <p>Pick one</p>
-      <button class="btnr" value="Rock" onclick="playGame('Rock')">Rock</button>
-      <button class="btnp" value="Paper" onclick="playGame('Paper')">
+      <button
+        class="btnr"
+        value="Rock"
+        onclick="playGame(),getPlayerChoice('Rock')"
+      >
+        Rock
+      </button>
+      <button
+        class="btnp"
+        value="Paper"
+        onclick="playGame(),getPlayerChoice('Paper')"
+      >
         Paper
       </button>
-      <button class="btns" value="Scissor" onclick="playGame('Scissor')">
+      <button
+        class="btns"
+        value="Scissor"
+        onclick="playGame(),getPlayerChoice('Scissor')"
+      >
         Scissor
       </button>
       <p>Player pick:</p>

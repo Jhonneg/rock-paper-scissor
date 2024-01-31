@@ -5,7 +5,18 @@ function getComputerChoice() {
     document.querySelector(".computerpick").textContent = computerPicked
     return computerPicked
 }
-
+function getPaper(){
+    let playerChoice = 'Paper'
+    return playerChoice
+}
+function getScissor() {
+    let playerChoice = "Scissor"
+    return playerChoice;
+}
+function getRock() {
+    let playerChoice = "Rock"
+    return playerChoice;
+}
 function getPlayerChoice() {
     let playerChoice = document.querySelector('button').value
     document.querySelector(".playerpick").textContent = playerChoice
@@ -14,6 +25,9 @@ function getPlayerChoice() {
 
 function playGame() {
     getPlayerChoice()
+    getScissor()
+    getRock()
+    getPaper()
     let playerScore = 0
     let computerScore = 0
     for (let i = 0; i < 6; i++) {
@@ -45,9 +59,9 @@ function playGame() {
         i = 6
     } 
     if (playerScore > computerScore) {
-        alert("Player won the game")
+        document.querySelector(".winner").textContent = 'Player won'
     } else if (computerScore > playerScore) {
-        alert("Computer won the game")
+        document.querySelector(".winner").textContent = 'Computer won'
     }
     
 }
