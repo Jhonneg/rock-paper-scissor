@@ -7,10 +7,11 @@ function getComputerChoice() {
 }
 
 function getPlayerChoice() {
-    let playerChoice = document.querySelector('button').getAttribute('value')
+    let playerChoice = document.querySelector('button').value
     document.querySelector(".playerpick").textContent = playerChoice
-    return
+    return playerChoice;
 }
+
 function playGame() {
     getPlayerChoice()
     let playerScore = 0
@@ -19,24 +20,24 @@ function playGame() {
         const playerChoice = getPlayerChoice();
         const computerPicked = getComputerChoice();
         if (computerPicked === playerChoice) {
-            alert("Draw")
-        } else if (computerPicked === "paper" && playerChoice === "rock") {
-            alert("Player lost")
+            document.querySelector(".winner").textContent = 'Draw'
+        } else if (computerPicked === "Paper" && playerChoice === "Rock") {
+            document.querySelector(".winner").textContent = 'Computer won'
             computerScore++
-        } else if (computerPicked === "scissor" && playerChoice === "rock") {
-            alert("Player won")
+        } else if (computerPicked === "Scissor" && playerChoice === "Rock") {
+            document.querySelector(".winner").textContent = 'Computer won'
             playerScore++
-        } else if (computerPicked === "rock" && playerChoice === "paper") {
-            alert("Player won")
+        } else if (computerPicked === "Rock" && playerChoice === "Paper") {
+            document.querySelector(".winner").textContent = 'Player won'
             playerScore++
-        } else if (computerPicked === "paper" && playerChoice === "scissor") {
-            alert("Player won")
+        } else if (computerPicked === "Paper" && playerChoice === "Scissor") {
+            document.querySelector(".winner").textContent = 'Player won'
             playerScore++
-        } else if (computerPicked === "scissor" && playerChoice === "paper") {
-            alert("Player lost")
+        } else if (computerPicked === "Scissor" && playerChoice === "Paper") {
+            document.querySelector(".winner").textContent = 'Computer won'
             computerScore++
-        } else if (computerPicked === "rock" && playerChoice === "scissor") {
-            alert("Player lost")
+        } else if (computerPicked === "Rock" && playerChoice === "Scissor") {
+            document.querySelector(".winner").textContent = 'Computer won'
             computerScore++
         }
     }

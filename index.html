@@ -14,17 +14,21 @@
   </head>
   <body>
     <div class="container">
-      <h1>Rock paper scissor game.</h1>
+      <h1>Rock paper scissor game</h1>
       <p>Pick one</p>
-      <button value="Rock" onclick="getPlayerChoice()">Rock</button>
-      <button value="Paper" onclick="getPlayerChoice()">Paper</button>
-      <button value="Scissor" onclick="getPlayerChoice()">Scissor</button>
+      <button class="btnr" value="Rock" onclick="playGame('Rock')">Rock</button>
+      <button class="btnp" value="Paper" onclick="playGame('Paper')">
+        Paper
+      </button>
+      <button class="btns" value="Scissor" onclick="playGame('Scissor')">
+        Scissor
+      </button>
       <p>Player pick:</p>
       <p class="playerpick"></p>
       <p>Computer picked:</p>
       <p class="computerpick"></p>
-      <p>Winner is:</p>
-      <p class="winner"></p>
+      <h1>Winner is:</h1>
+      <h1 class="winner"></h1>
     </div>
     <script src="index.js"></script>
   </body>
