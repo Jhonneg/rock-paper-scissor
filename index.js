@@ -5,34 +5,18 @@ function getComputerChoice() {
     document.querySelector(".computerpick").textContent = computerPicked
     return computerPicked
 }
-function getPaper(){
-    let playerChoice = 'Paper'
-    return playerChoice
-}
-function getScissor() {
-    let playerChoice = "Scissor"
-    return playerChoice;
-}
-function getRock() {
-    let playerChoice = "Rock"
-    return playerChoice;
-}
 function getPlayerChoice() {
-    let playerChoice = document.querySelector('button').value
+    let playerChoice
     document.querySelector(".playerpick").textContent = playerChoice
     return playerChoice;
 }
 
-function playGame() {
+function playGame(playerChoice,computerPicked) {
     getPlayerChoice()
-    getScissor()
-    getRock()
-    getPaper()
+    document.querySelector(".playerpick").textContent = playerChoice
     let playerScore = 0
     let computerScore = 0
     for (let i = 0; i < 6; i++) {
-        const playerChoice = getPlayerChoice();
-        const computerPicked = getComputerChoice();
         if (computerPicked === playerChoice) {
             document.querySelector(".winner").textContent = 'Draw'
         } else if (computerPicked === "Paper" && playerChoice === "Rock") {
